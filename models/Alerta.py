@@ -1,7 +1,7 @@
 from config.db import app, db, ma
 
 class Alerta(db.Model):
-    __tablename__ = "lblalerta"
+    __tablename__ = "tblalerta"
 
     id = db.Column(db.Integer, primary_key = True)
     zonas_peligrosas = db.Column(db.String(50))
