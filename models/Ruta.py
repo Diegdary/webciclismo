@@ -13,7 +13,7 @@ class Usuario(db.Model):
     
 
     def __init__(self,a,b,c,d,f,g):
-        self.id = i
+        self.id = a
         self.id_usuario = id_usu
         self.mensaje = mens
 with app.app_context():

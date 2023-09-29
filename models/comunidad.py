@@ -1,6 +1,6 @@
 from config.db import app, db, ma
 
-class Usuario(db.Model):
+class Comunidad(db.Model):
     __tablename__ = "tblcomunidad"
 
     id = db.Column(db.Integer, primary_key = True)
