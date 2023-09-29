@@ -1,7 +1,7 @@
 from config.db import app, db, ma
 
 class Ciclovia(db.Model):
-    __tablename__ = "ciclovia"
+    __tablename__ = "tblciclovia"
 
     id = db.Column(db.Integer, primary_key = True)
     punto_inicial = db.Column(db.String(50))

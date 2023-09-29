@@ -21,4 +21,4 @@ class UsuarioSchema(ma.Schema):
     class Meta:
         fields = ('id', 'nombre','correo','password','genero')   
 
-       
+
