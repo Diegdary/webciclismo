@@ -8,8 +8,7 @@ class Usuario(db.Model):
     mensaje = db.Column(db.String(50))
     
 
-    def __init__(self, i, id_usu, mens):
-        self.id = i
+    def __init__(self, id_usu, mens):
         self.id_usuario = id_usu
         self.mensaje = mens
 with app.app_context():
