@@ -17,6 +17,6 @@ class Ciclovia(db.Model):
 with app.app_context():
     db.create_all()
 
-class UsuarioSchema(ma.Schema):
+class CicloviaSchema(ma.Schema):
     class Meta:
         fields = ('id', 'punto_inicial','punto_final','descripcion','nombre_ciclovia')  
