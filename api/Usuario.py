@@ -27,11 +27,13 @@ def updateusuario():
     nombre = request.json["nombre"]
     password = request.json["password"]
     genero = request.json["genero"]
+    correo = request.json["correo"]
 
     user = Usuario.query.get(i)
     user.nombre = nombre
     user.password = password
     user.genero = genero
+    user.correo = correo
     db.session.commit()
     return "guardado con exito!"
 

@@ -9,11 +9,11 @@ class Ciclovia(db.Model):
     descripcion = db.Column(db.String(50))
     nombre_ciclovia = db.Column(db.String(50))
 
-    def __init__(self, pinicial, pfinal, desc, nciclo):
-        self.punto_inicial = pinicial
-        self.punto_final = pfinal
-        self.descripcion = desc
-        self.nombre_ciclovia = nciclo
+    def __init__(self, punto_inicial, punto_final, descripcion, nombre_ciclovia):
+        self.punto_inicial = punto_inicial
+        self.punto_final = punto_final
+        self.descripcion = descripcion
+        self.nombre_ciclovia = nombre_ciclovia
 with app.app_context():
     db.create_all()
 

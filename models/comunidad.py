@@ -8,9 +8,9 @@ class Comunidad(db.Model):
     mensaje = db.Column(db.String(50))
     
 
-    def __init__(self, id_usu, mens):
-        self.id_usuario = id_usu
-        self.mensaje = mens
+    def __init__(self, id_usuario, mensaje):
+        self.id_usuario = id_usuario
+        self.mensaje = mensaje
 with app.app_context():
     db.create_all()
 
