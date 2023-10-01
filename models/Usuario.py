@@ -9,11 +9,11 @@ class Usuario(db.Model):
     password = db.Column(db.String(50))
     genero = db.Column(db.String(50))
 
-    def __init__(self, nomb, mail, passw, genr):
-        self.nombre = nomb
-        self.correo = mail
-        self.password = passw
-        self.genero = genr
+    def __init__(self, nombre, correo, password, genero):
+        self.nombre = nombre
+        self.correo = correo
+        self.password = password
+        self.genero = genero
 with app.app_context():
     db.create_all()
 

@@ -19,7 +19,7 @@ def saveusuarios():
     data= request.get_json()
     db.session.add(Usuario(**data))
     db.session.commit()
-    return UsuarioSchema.jsonify(Usuario(**data))
+    return jsonify(usuario_schema.dump(Usuario(**data)))
 
 @ruta_usuario.route("/updateusuario", methods=["PUT"])
 def updateusuario():
@@ -37,10 +37,10 @@ def updateusuario():
 
 @ruta_usuario.route("/deleteusuario/<id>", methods=["GET"])
 def deleteusuario(id):
-    data = Usuario.query.get(i)
+    data = Usuario.query.get(id)
     db.session.delete(data)
     db.session.commit()
-    return jsonify(UsuarioSchema.dump(data))
+    return jsonify(usuario_schema.dump(data))
 
 
 
