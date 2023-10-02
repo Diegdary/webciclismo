@@ -34,7 +34,7 @@ def updateciclovia():
     return jsonify(ciclovia_schema.dump(reg))
 
 
-@ruta_ciclovia.route("/deleteciclovia/<id>", methods=["GET"])
+@ruta_ciclovia.route("/deleteciclovia/<id>", methods=["DELETE"])
 def deleteciclovia(id):
     data = Ciclovia.query.get(id)
     db.session.delete(data)

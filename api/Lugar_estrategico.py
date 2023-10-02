@@ -31,7 +31,7 @@ def updatelugar():
     return jsonify(lugarEstrategicoSchema.dump(reg))
 
 
-@ruta_lugar_estrategico.route("/deletelugar/<id>", methods=["GET"])
+@ruta_lugar_estrategico.route("/deletelugar/<id>", methods=["DELETE"])
 def deletelugar(id):
     data = Lugar_Estrategico.query.get(id)
     db.session.delete(data)

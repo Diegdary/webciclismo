@@ -32,7 +32,7 @@ def updatecomunidad():
     return jsonify(comunidad_schema.dump(result))
 
 
-@ruta_comunidad.route("/deletecomunidad/<id>", methods=["GET"])
+@ruta_comunidad.route("/deletecomunidad/<id>", methods=["DELETE"])
 def deletecomunidad(id):
     data = Comunidad.query.get(id)
     db.session.delete(data)
