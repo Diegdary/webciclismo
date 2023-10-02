@@ -10,7 +10,7 @@ rutas_lugarschema=Ruta_lugarSchema(many=True)
 @ruta_ruta_lugar.route("/rutaslugar", methods=["GET"])
 def rutaslugar():
     resultall = Ruta_lugar.query.all() #select * from ruta
-    result = ruta_lugarschema.dump(resultall)
+    result = rutas_lugarschema.dump(resultall)
     return jsonify(result)
 
 @ruta_ruta_lugar.route("/saverutalugar", methods=["POST"])
@@ -38,5 +38,5 @@ def deleterutalugar(id):
     data = Ruta_lugar.query.get(id)
     db.session.delete(data)
     db.session.commit()
-    return jsonify(Ruta_lugarSchema.dump(data))
+    return jsonify(ruta_lugarschema.dump(data))
 

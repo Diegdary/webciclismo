@@ -10,7 +10,7 @@ ciclovias_ruta_schema=Ciclovia_rutaSchema(many=True)
 @ruta_ciclovia_ruta.route("/cicloviasruta", methods=["GET"])
 def cicloviasruta():
     resultall = Ciclovia_ruta.query.all() #select * from ruta
-    result = ciclovia_ruta_schema.dump(resultall)
+    result = ciclovias_ruta_schema.dump(resultall)
     return jsonify(result)
 
 @ruta_ciclovia_ruta.route("/savecicloviaruta", methods=["POST"])
@@ -39,4 +39,4 @@ def deletecicloviaruta(id):
     data = Ciclovia_ruta.query.get(id)
     db.session.delete(data)
     db.session.commit()
-    return jsonify(Ciclovia_rutaSchema.dump(data))
+    return jsonify(ciclovia_ruta_schema.dump(data))
