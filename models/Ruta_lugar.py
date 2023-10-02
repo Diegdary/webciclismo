@@ -7,9 +7,9 @@ class Ruta_lugar(db.Model):
     id_ruta = db.Column(db.Integer, db.ForeignKey('tblruta.id'))
     id_lugar = db.Column(db.Integer, db.ForeignKey('tbllugar_estrategico.id'))
 
-    def __init__(self, id_rut, id_lug):
-        self.id_ruta = id_rut
-        self.id_lugar = id_lug
+    def __init__(self, id_ruta, id_lugar):
+        self.id_ruta = id_ruta
+        self.id_lugar = id_lugar
 with app.app_context():
     db.create_all()
 

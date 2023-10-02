@@ -11,13 +11,13 @@ class Ruta(db.Model):
     ciclovia_inicial = db.Column(db.String(50))
     ciclovia_final = db.Column(db.String(50))
 
-    def __init__(self,a,b,c,d,f,g):
-        self.id_alerta = a
-        self.id_usuario = b
-        self.descripcion_ruta = c
-        self.nombre_ruta = d
-        self.ciclovia_inicial = f
-        self.ciclovia_final = g
+    def __init__(self,id_alerta,id_usuario,descripcion_ruta,nombre_ruta,ciclovia_inicial,ciclovia_final):
+        self.id_alerta = id_alerta
+        self.id_usuario = id_usuario
+        self.descripcion_ruta = descripcion_ruta
+        self.nombre_ruta = nombre_ruta
+        self.ciclovia_inicial = ciclovia_inicial
+        self.ciclovia_final = ciclovia_final
 
 with app.app_context():
     db.create_all()

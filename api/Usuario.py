@@ -37,7 +37,7 @@ def updateusuario():
     db.session.commit()
     return "guardado con exito!"
 
-@ruta_usuario.route("/deleteusuario/<id>", methods=["DELETE"])
+@ruta_usuario.route("/deleteusuario/<id>", methods=["GET"])
 def deleteusuario(id):
     data = Usuario.query.get(id)
     db.session.delete(data)

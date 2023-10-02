@@ -9,11 +9,11 @@ class Alerta(db.Model):
     cambio_clima = db.Column(db.String(50))
     fecha_alerta = db.Column(db.Date)
 
-    def __init__(self, zpeligrosas, inter, cambioc, falerta):
-        self.zonas_peligrosas = zpeligrosas
-        self.intersecciones = inter
-        self.cambio_clima = cambioc
-        self.fecha_alerta = falerta
+    def __init__(self, zonas_peligrosas, intersecciones, cambio_clima, fecha_alerta):
+        self.zonas_peligrosas = zonas_peligrosas
+        self.intersecciones = intersecciones
+        self.cambio_clima = cambio_clima
+        self.fecha_alerta = fecha_alerta
 with app.app_context():
     db.create_all()
 

@@ -7,9 +7,9 @@ class Ciclovia_ruta(db.Model):
     id_ciclovia = db.Column(db.Integer, db.ForeignKey('tblciclovia.id'))
     id_rutas = db.Column(db.Integer, db.ForeignKey('tblruta.id'))
 
-    def __init__(self, id_ciclo, id_rut):
-        self.id_ciclovia = id_ciclo
-        self.id_rutas = id_rut
+    def __init__(self, id_ciclovia, id_rutas):
+        self.id_ciclovia = id_ciclovia
+        self.id_rutas = id_rutas
 with app.app_context():
     db.create_all()
 

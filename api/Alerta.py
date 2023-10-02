@@ -35,11 +35,11 @@ def updatealerta():
     alert.intersecciones = intersecciones
     alert.cambio_clima = cambio_clima
     alert.fecha_alerta = fecha_alerta
-    
+
     db.session.commit()
     return "guardado con exito!"
 
-@ruta_alerta.route("/deletealerta/<id>", methods=["DELETE"])
+@ruta_alerta.route("/deletealerta/<id>", methods=["GET"])
 def deletealerta(id):
     data = Alerta.query.get(id)
     db.session.delete(data)
