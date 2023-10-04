@@ -39,9 +39,10 @@ def updatealerta():
     db.session.commit()
     return "guardado con exito!"
 
+
 @ruta_alerta.route("/deletealerta/<id>", methods=["GET"])
 def deletealerta(id):
     data = Alerta.query.get(id)
     db.session.delete(data)
     db.session.commit()
-    return jsonify(AlertaSchema.dump(data))
+    return jsonify(alerta_schema.dump(data))
