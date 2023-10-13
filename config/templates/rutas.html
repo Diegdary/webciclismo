@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Ciclovías</title>
+    <link rel="stylesheet" href="css/estilor.css"> 
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+    <!-- Agrega enlaces a bibliotecas de mapas como Leaflet o Google Maps si es necesario -->
+</head>
+<body>
+    <header>
+        <h1>Mapa de Ciclovías</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Nuevas Rutas</a></li>
+                <li><a href="#">Estaciones de Transporte</a></li>
+                <li><a href="#">Áreas Comerciales</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div id='map'></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1Ijoiam9qbWEiLCJhIjoiY2xubmtjbnIyMDU0YjJqcXRpbm1oMGxzbiJ9.ig6XODhbgh-3yzG7aeytzQ';
+        var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-74.78819050532397, 10.988379510867086],
+        zoom: 16
+    });
+    
+
+    map.on('load', () => {
+
+        const coordenadas = [
+            { lng: -74.78800038350337, lat: 10.988096995991157 },
+            { lng: -74.78689316160737, lat: 10.98778273331034 },
+            { lng: -74.78609846246239, lat: 10.987563237802476 },
+            { lng: -74.79340247119003, lat: 10.965176952597526 },
+        ];
+
+        coordenadas.forEach(coordenada => {
+            let element = document.createElement('div');
+            element.className = 'marker';
+
+            new mapboxgl.Marker(element)
+                .setLngLat(coordenada)
+                .addTo(map);
+        });
+        
+        map.addSource('route', {
+        'type': 'geojson',
+        'data': {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+        "coordinates": [
+            [
+                -74.78800038350337,
+                10.988096995991157
+            ],
+            [
+                -74.78822423488677,
+                10.987307794338477
+            ],
+            [
+                -74.7871073849742,
+                10.987000619472283
+            ],
+            [
+                -74.78689316160737,
+                10.98778273331034
+            ],
+            [
+                -74.7871073849742,
+                10.987005345241542
+            ],
+            [
+                -74.78631027882493,
+                10.986774034722345
+            ],
+            [
+                -74.78609846246239,
+                10.987563237802476
+            ],
+            [
+                -74.78631153021837,
+                10.986781891026638
+            ],
+            [
+                -74.7868701224486,
+                10.98483428284618
+            ],
+            [
+                -74.78734203657388,
+                10.983198660223323
+            ],
+            [
+                -74.78774653439609,
+                10.981581937627283
+            ],
+            [
+                -74.78813177717201,
+                10.980088114121102
+            ],
+            [
+                -74.78891188011403,
+                10.9773179057255
+            ],
+            [
+                -74.78943319144113,
+                10.97540439477197
+            ],
+            [
+                -74.78976064205895,
+                10.97439273567376
+            ],
+            [
+                -74.79005919997516,
+                10.973626897977212
+            ],
+            [
+                -74.79050222139878,
+                10.972388316762306
+            ],
+            [
+                -74.79088745741994,
+                10.97122536936908
+            ],
+            [
+                -74.79130256453429,
+                10.970125733867434
+            ],
+            [
+                -74.7920537741537,
+                10.96834820577071
+            ],
+            [
+                -74.79251605737922,
+                10.967156877467005
+            ],
+            [
+                -74.79283387709575,
+                10.966362655931178
+            ],
+            [
+                -74.7933828384254,
+                10.965190229764858
+            ]
+        ],
+        "type": "LineString"
+        },
+        
+        }
+        });
+        map.addLayer({
+            'id': 'route',
+            'type': 'line',
+            'source': 'route',
+            'layout': {
+            'line-join': 'round',
+            'line-cap': 'round'
+        },
+            'paint': {
+            'line-color': '#017ACC',
+            'line-width': 8
+            }
+        });
+    });
+        
+</script>
+    <section id="proponer-rutas">
+        <h2>Proporciona una Nueva Ruta</h2>
+        <form action="#" method="post"> 
+            <label for="nombre-ruta">Nombre de la Ruta:</label>
+            <input type="text" id="nombre-ruta" name="nombre-ruta" required>
+            
+            <label for="descripcion-ruta">Descripción:</label>
+            <textarea id="descripcion-ruta" name="descripcion-ruta" rows="4" required></textarea>
+            
+            <label for="ubicacion-ruta">Ubicación:</label>
+            <input type="text" id="ubicacion-ruta" name="ubicacion-ruta" required>
+            
+            <button type="submit">Enviar Ruta</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Mapa de Ciclovías(pata de gallo)</p>
+    </footer>
+</body>
+</html>

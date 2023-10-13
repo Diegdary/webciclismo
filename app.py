@@ -1,5 +1,6 @@
-from flask import Flask, redirect, jsonify, render_template, request
-from config.db import app
+from flask import Flask, redirect, jsonify, render_template, request, session
+from config.db import app, db
+from models.Usuario import Usuario, UsuarioSchema
 
 from api.Usuario import ruta_usuario
 from api.Ciclovia import ruta_ciclovia
@@ -21,7 +22,36 @@ app.register_blueprint(ruta_ruta_lugar, url_prefix="/api")
 
 @app.route("/")
 def index():
-    return "Hello!!"
+    return render_template("login.html")
+
+@app.route("/ingresar", methods=["POST"])
+def ingresar():
+    usuario= request.form["username"]
+    password= request.form["password"]
+    userr = db.session.query(Usuario.id).filter(Usuario.nombre == usuario, Usuario.password == password).all()
+    resultado = UsuarioSchema(many=True).dump(userr)
+    
+    if len(resultado) > 0:
+        session["usuario"]=usuario
+        return redirect("/comunidad")
+    else:
+        return redirect("/")
+    
+
+@app.route("/comunidad", methods=["GET"])
+def comunidad():
+    if "usuario" in session:
+        return render_template("comunidad.html", usuario= session["usuario"])
+    else:
+        return redirect("/")
+
+
+
+@app.route("/salir")
+def salir():
+    session.pop("usuario",None)
+    return redirect("/")
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000, host='0.0.0.0')

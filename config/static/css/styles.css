@@ -1,0 +1,131 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #faf8f8;
+}
+
+header {
+    background-color: #007acc;
+    color: #fcfbfb;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Banner */
+#banner {
+    text-align: center;
+    padding: 60px;
+    background-image: url('banner-background.jpg'); /* Reemplaza con la imagen de fondo deseada */
+    background-size: cover;
+    color: #070707;
+}
+
+#banner h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#banner p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+#banner a {
+    display: inline-block;
+    background-color: #007acc;
+    color: #fefdfd;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#banner a:hover {
+    background-color: #00578e;
+}
+
+/* Sección Acerca de Nosotros */
+#about {
+    background-color: #fff;
+    padding: 40px;
+}
+
+#about h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 16px;
+}
+
+/* Sección Características Principales */
+#features {
+    background-color: #f0f0f0;
+    padding: 40px;
+}
+
+#features h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#features ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#features li {
+    flex: 0 0 calc(33.33% - 20px); /* Para que haya 3 elementos por fila con espacio entre ellos */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#features img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    background-color: #007acc;
+    color: #fff;
+    padding: 10px 0;
+}
+
+/* Estilos para enlaces */
+a {
+    text-decoration: none;
+    color: #007acc;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #00578e;
+}

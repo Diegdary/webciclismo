@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidad Ciclista</title>
+    <link rel="stylesheet" href="./../static/css/estiloc.css"> 
+</head>
+<body>
+    <header>
+        <h1>Comunidad Ciclista</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Consejos</a></li>
+                <li><a href="#">Rutas Favoritas</a></li>
+                <li><a href="#">Eventos</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="interaccion">
+        <h2>¡Únete a la Comunidad Ciclista!</h2>
+        <p>Comparte tus consejos, rutas favoritas y eventos relacionados con el ciclismo urbano.</p>
+        
+        <!-- Formulario para compartir consejos -->
+        <form action="#" method="post"> 
+            <label for="consejo">Comparte un Consejo:</label>
+            <textarea id="consejo" name="consejo" rows="4" required></textarea>
+            <button type="submit">Enviar Consejo</button>
+        </form>
+        
+        <!-- Formulario para compartir rutas favoritas -->
+        <form action="#" method="post"> 
+            <label for="ruta-favorita">Comparte una Ruta Favorita:</label>
+            <input type="text" id="ruta-favorita" name="ruta-favorita" required>
+            <button type="submit">Enviar Ruta Favorita</button>
+        </form>
+        
+        <!-- Formulario para compartir eventos -->
+        <form action="#" method="post"> 
+            <label for="evento">Comparte un Evento:</label>
+            <input type="text" id="evento" name="evento" required>
+            <button type="submit">Enviar Evento</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Comunidad Ciclista(pata de gallo)</p>
+    </footer>
+</body>
+</html>
