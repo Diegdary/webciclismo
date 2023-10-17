@@ -3,11 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ciclasegura</title>
+    <link rel='stylesheet' type='text/css' media='screen' href="{{url_for('static', filename='css/homes.css')}}">
+    <link rel='stylesheet' type='text/css' media='screen' href="{{url_for('static', filename='css/estilor.css')}}">
+    <link rel='stylesheet' type='text/css' media='screen' href="{{url_for('static', filename='css/estiloa.css')}}">
+    <link rel='stylesheet' type='text/css' media='screen' href="{{url_for('static', filename='css/estiloc.css')}}">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css" type="text/css"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css" rel="stylesheet" type="text/css"
+    />
+
+
+
 </head>
 <body>
-    
-     <h1>holaa</h1>
+    <header>
+        <h1>Ciclasegura</h1>
+        <nav>
+            <ul>
+                <li><a href="/home">Inicio</a></li>
+                <li><a href="/rutas">Mapa de Ciclovías</a></li>
+                <li><a href="/alertas">Alertas de Seguridad</a></li>
+                <li><a href="/comunidad">Comunidad Ciclista</a></li>
+            </ul>
+        </nav>
+    </header>
+    {% block body %}
+
+    {% endblock %}
+    <footer>
+        <p>&copy; 2023 App de Gestión de Ciclovías y Seguridad(pata de gallo)</p>
+    </footer>
     
 </body>
 </html>

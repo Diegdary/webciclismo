@@ -1,45 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa de Ciclovías</title>
-    <link rel="stylesheet" href="../static/css/estilor.css"> 
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css"
-      type="text/css"
-    />
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
-    <link
-      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    
-    <!-- Agrega enlaces a bibliotecas de mapas como Leaflet o Google Maps si es necesario -->
-</head>
-<body>
-    <header>
-        <h1>Mapa de Ciclovías</h1>
-        <nav>
-            <ul>
-                <li><a href="/home">Inicio</a></li>
-                <li><a href="/rutas">Mapa de Ciclovías</a></li>
-                <li><a href="/alertas">Alertas de Seguridad</a></li>
-                <li><a href="/comunidad">Comunidad Ciclista</a></li>
-            </ul>
-        </nav>
-    </header>
-    
+{% extends "layout.html" %}
+{% block body %}
     <div id='map'></div>
     <script src="../static/js/map.js"></script>
-
-    <footer>
-        <p>&copy; 2023 Mapa de Ciclovías(pata de gallo)</p>
-    </footer>
-</body>
-</html>
+{% endblock %}

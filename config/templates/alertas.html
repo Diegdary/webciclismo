@@ -1,24 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Alertas para Ciclistas</title>
-    <link rel="stylesheet" href="../static/css/estiloa.css"> 
-</head>
-<body>
-    <header>
-        <h1>Sistema de Alertas para Ciclistas</h1>
-        <nav>
-            <ul>
-                <li><a href="/home">Inicio</a></li>
-                <li><a href="/rutas">Mapa de Ciclovías</a></li>
-                <li><a href="/alertas">Alertas de Seguridad</a></li>
-                <li><a href="/comunidad">Comunidad Ciclista</a></li>
-            </ul>
-        </nav>
-    </header>
-    
+{% extends "layout.html" %}
+{% block body %}
     <section id="alerts">
         <h2>Alertas</h2>
         <div class="alert">
@@ -36,9 +17,4 @@
             <p>Se esperan lluvias fuertes en la tarde. Asegúrate de llevar tu equipo de lluvia si planeas andar en bicicleta.</p>
         </div>
     </section>
-
-    <footer>
-        <p>&copy; 2023 Sistema de Alertas para Ciclistas (pata gallo)</p>
-    </footer>
-</body>
-</html>
+{% endblock %}

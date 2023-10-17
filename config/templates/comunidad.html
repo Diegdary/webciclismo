@@ -1,24 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comunidad Ciclista</title>
-    <link rel="stylesheet" href="./../static/css/estiloc.css"> 
-</head>
-<body>
-    <header>
-        <h1>Comunidad Ciclista</h1>
-        <nav>
-            <ul>
-                <li><a href="/home">Inicio</a></li>
-                <li><a href="/rutas">Mapa de Ciclovías</a></li>
-                <li><a href="/alertas">Alertas de Seguridad</a></li>
-                <li><a href="/comunidad">Comunidad Ciclista</a></li>
-            </ul>
-        </nav>
-    </header>
-    
+{% extends "layout.html" %}
+{% block body %}  
     <section id="interaccion">
         <h2>¡Únete a la Comunidad Ciclista!</h2>
         <p>Comparte tus consejos, rutas favoritas y eventos relacionados con el ciclismo urbano.</p>
@@ -44,9 +25,4 @@
             <button type="submit">Enviar Evento</button>
         </form>
     </section>
-
-    <footer>
-        <p>&copy; 2023 Comunidad Ciclista(pata de gallo)</p>
-    </footer>
-</body>
-</html>
+{% endblock %}
