@@ -25,10 +25,11 @@ def ingresar():
     password= request.form["password"]
     userr = db.session.query(Usuario.id).filter(Usuario.nombre == usuario, Usuario.password == password).all()
     resultado = UsuarioSchema(many=True).dump(userr)
-
+    print(resultado)
     
     if len(resultado) > 0:
         session["usuario"]=usuario
+        session["idusuario"]= resultado[0]["id"]
         return redirect("/home")
     else:
         return redirect("/")
@@ -36,12 +37,10 @@ def ingresar():
 
 @app.route("/comunidad", methods=["GET"])
 def comunidad():
-    #lista de mensajes
-    mensajes = Comunidad.query.all()
-    session["listamensajes"] = ComunidadSchema(many=True).dump(mensajes)
+
     #verificar login usuario
     if "usuario" in session:
-        return render_template("comunidad.html", usuario= session["usuario"], todosmensajes= session["listamensajes"])
+        return render_template("comunidad.html", usuario= session["usuario"], idusuario= session["idusuario"])
     else:
         return redirect("/")
     
@@ -72,6 +71,7 @@ def rutas():
 @app.route("/salir")
 def salir():
     session.pop("usuario",None)
+    session.pop("idusuario",None)
     return redirect("/")
 
 
