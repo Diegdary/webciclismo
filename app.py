@@ -17,23 +17,45 @@ app.register_blueprint(ruta_ruta, url_prefix="/api")
 
 @app.route("/")
 def index():
-    return render_template("login.html")
+    #verificar login usuario
+    if "usuario" in session:
+        return render_template("home.html")
+    else:
+        return render_template("login.html")
+
+
+@app.route("/register", methods=["POST"])
+def register():
+    correo= request.form["correo"]
+    username = request.form["username"]
+    password= request.form["password"]
+    genero = request.form["genero"]
+    userr = Usuario(username,correo,password,genero)
+    db.session.add(userr)
+    db.session.commit()
+    return redirect("/")
+
 
 @app.route("/ingresar", methods=["POST"])
 def ingresar():
-    usuario= request.form["username"]
+    correo= request.form["username"]
     password= request.form["password"]
-    userr = db.session.query(Usuario.id).filter(Usuario.nombre == usuario, Usuario.password == password).all()
+    userr = db.session.query(Usuario.id).filter(Usuario.correo == correo, Usuario.password == password).all()
+    print(userr)
     resultado = UsuarioSchema(many=True).dump(userr)
     print(resultado)
     
     if len(resultado) > 0:
-        session["usuario"]=usuario
+        session["usuario"]=Usuario.query.get(resultado[0]["id"]).nombre
         session["idusuario"]= resultado[0]["id"]
         return redirect("/home")
     else:
         return redirect("/")
     
+
+@app.route("/menuregistrar", methods=["GET"])
+def menuregistrar():
+        return render_template("/register.html")
 
 @app.route("/comunidad", methods=["GET"])
 def comunidad():

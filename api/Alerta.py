@@ -10,7 +10,9 @@ alertas_schema=AlertaSchema(many=True)
 @ruta_alerta.route("/alertas", methods=["GET"])
 def alertas():
     resultall = Alerta.query.all() #select * from alerta
+    print(resultall)
     result = alertas_schema.dump(resultall)
+    print(result)
     return jsonify(result)
 
 
