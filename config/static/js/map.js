@@ -1,3 +1,13 @@
+
+    mapboxgl.accessToken = 'pk.eyJ1Ijoiam9qbWEiLCJhIjoiY2xubmtjbnIyMDU0YjJqcXRpbm1oMGxzbiJ9.ig6XODhbgh-3yzG7aeytzQ';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [-74.78819050532397, 10.988379510867086],
+    zoom: 16
+    
+    });
+
     const arraycordenadas = [
         [
             {lng: -74.78636308514314, lat: 10.986759946187245},
@@ -30,15 +40,9 @@
         
     ]
     let firstchanged = false;
-    mapboxgl.accessToken = 'pk.eyJ1Ijoiam9qbWEiLCJhIjoiY2xubmtjbnIyMDU0YjJqcXRpbm1oMGxzbiJ9.ig6XODhbgh-3yzG7aeytzQ';
-    var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11',
-    center: [-74.78819050532397, 10.988379510867086],
-    zoom: 16
-    
-    });
+
     mirarRoute1();
+
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
     map.addControl(new mapboxgl.FullscreenControl(), 'bottom-right'); 
     map.addControl(new MapboxGeocoder({accessToken: mapboxgl.accessToken,mapboxgl: mapboxgl})); 
@@ -58,8 +62,8 @@
     let endMarker = null;
     
     function addMarker(lng, lat) {
-    let markerImage = new Image(70, 42); 
-    markerImage.src = 'https://freepngimg.com/thumb/bicycle/6-2-bicycle-png-7.png'; 
+    let markerImage = new Image(52, 52); 
+    markerImage.src = 'https://cdn-icons-png.flaticon.com/512/1196/1196828.png'; 
     if (!startMarker) {
     startMarker = new mapboxgl.Marker({ element: markerImage, anchor: 'bottom' }).setLngLat([lng, lat]).addTo(map);
     } else if (!endMarker) {
@@ -68,6 +72,9 @@
     
     }
     }
+
+    
+
     
     function calculateRoute() {
     const startCoordinates = startMarker.getLngLat();
@@ -116,7 +123,14 @@
         "line-width": 4
         }
     });
-    console.log(data.routes[0].geometry);
+    const rnd = Math.floor(Math.random() * 4);
+
+    if (rnd===1) {
+        // Mostrar un mensaje en un alertify
+        alertify.alert('Alerta!!, hay peligro en la ruta trazada');
+        
+    }
+    console.log(rnd);
     });
     }
     
@@ -139,6 +153,15 @@
     }
     });
     
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
     function mirarRoute1() {
     
     
@@ -153,7 +176,9 @@
         if (map.getSource('route')) {
             map.removeSource('route');
         }
-    
+        
+        
+
         map.addLayer({
             "id": `route${index}`,
             "type": "line",
@@ -169,12 +194,11 @@
             "line-cap": "round"
             },
             "paint": {
-            "line-color": "#017ACC",
+            "line-color": getRandomColor(),
             "line-width": 4
             }
         });
-        console.log(index + ":")
-        console.log(data.routes[0].geometry);
+        
         });
     
     })

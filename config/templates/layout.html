@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciclasegura</title>
+    <title>CiclaSegura</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1196/1196828.png">
     <link rel='stylesheet' type='text/css' media='screen' href="{{url_for('static', filename='css/homes.css')}}">
     <link rel='stylesheet' type='text/css' media='screen' href="{{url_for('static', filename='css/estilor.css')}}">
     <link rel='stylesheet' type='text/css' media='screen' href="{{url_for('static', filename='css/estiloa.css')}}">
@@ -22,7 +23,7 @@
 </head>
 <body>
     <header>
-        <h1>Ciclasegura</h1>
+        <h1>CiclaSegura</h1>
         <nav>
             <ul>
                 <li><a href="/home">Inicio</a></li>
@@ -36,6 +37,30 @@
     {% block body %}
 
     {% endblock %}
+
+        <script src="{{url_for('static', filename='js/app.js')}}"></script>
+        <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+        <!-- Default theme -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+        <!-- Semantic UI theme -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+        <!-- Bootstrap theme -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+
+        <!-- 
+            RTL version
+        -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.rtl.min.css"/>
+        <!-- Default theme -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.rtl.min.css"/>
+        <!-- Semantic UI theme -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.rtl.min.css"/>
+        <!-- Bootstrap theme -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.rtl.min.css"/>
+
     <footer>
         <p>&copy; 2023 App de Gestión de Ciclovías y Seguridad(pata de gallo)</p>
     </footer>

@@ -1,35 +1,4 @@
-/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #faf8f8;
-}
 
-header {
-    background-color: #007acc;
-    color: #fcfbfb;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-}
 
 /* Banner */
 #banner {
@@ -109,23 +78,4 @@ nav a {
     width: 80px;
     height: 80px;
     margin-bottom: 10px;
-}
-
-/* Pie de página */
-footer {
-    text-align: center;
-    background-color: #007acc;
-    color: #fff;
-    padding: 10px 0;
-}
-
-/* Estilos para enlaces */
-a {
-    text-decoration: none;
-    color: #007acc;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #00578e;
 }
