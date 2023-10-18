@@ -123,11 +123,27 @@
         "line-width": 4
         }
     });
-    const rnd = Math.floor(Math.random() * 4);
+    const rnd = Math.floor(Math.random() * 16);
 
-    if (rnd===1) {
+    if (rnd===5) {
         
-        alertify.alert('Alerta!!, hay peligro en la ruta trazada');
+        
+        alertify.alert('Hay zonas peligrosas en la ruta trazada', function() {
+            
+        }).setHeader('<em>Alerta de ruta!</em>');
+    }
+    if (rnd===10) {
+        
+        alertify.alert('Esta ruta puede tener zonas con interrupciones climáticas', function() {
+            
+        }).setHeader('<em>Alerta de ruta!</em>');
+        
+    }
+    if (rnd===15) {
+        
+        alertify.alert('Esta ruta podria contener intersecciones conflictivas', function() {
+            
+        }).setHeader('<em>Alerta de ruta!</em>');
         
     }
     console.log(rnd);

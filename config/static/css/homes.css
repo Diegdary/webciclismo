@@ -79,3 +79,14 @@
     height: 80px;
     margin-bottom: 10px;
 }
+
+#btn-salir {
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    padding: 10px;
+    color: #00578e;
+}
+#btn-salir:hover {
+    background-color: #00578e;
+    color: #FFFFFF;
+}
