@@ -1,6 +1,7 @@
 from flask import Flask, redirect, jsonify, render_template, request, session
 from config.db import app, db
 from models.Usuario import Usuario, UsuarioSchema
+from models.comunidad import Comunidad, ComunidadSchema
 
 from api.Usuario import ruta_usuario
 from api.comunidad import ruta_comunidad
@@ -24,6 +25,7 @@ def ingresar():
     password= request.form["password"]
     userr = db.session.query(Usuario.id).filter(Usuario.nombre == usuario, Usuario.password == password).all()
     resultado = UsuarioSchema(many=True).dump(userr)
+
     
     if len(resultado) > 0:
         session["usuario"]=usuario
@@ -34,8 +36,12 @@ def ingresar():
 
 @app.route("/comunidad", methods=["GET"])
 def comunidad():
+    #lista de mensajes
+    mensajes = Comunidad.query.all()
+    session["listamensajes"] = ComunidadSchema(many=True).dump(mensajes)
+    #verificar login usuario
     if "usuario" in session:
-        return render_template("comunidad.html", usuario= session["usuario"])
+        return render_template("comunidad.html", usuario= session["usuario"], todosmensajes= session["listamensajes"])
     else:
         return redirect("/")
     

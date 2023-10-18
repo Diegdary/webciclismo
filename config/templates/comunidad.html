@@ -1,28 +1,28 @@
 {% extends "layout.html" %}
 {% block body %}  
     <section id="interaccion">
-        <h2>¡Únete a la Comunidad Ciclista!</h2>
+        <h2 id="titulo">¡Únete a la Comunidad Ciclista {{usuario}}!</h2>
         <p>Comparte tus consejos, rutas favoritas y eventos relacionados con el ciclismo urbano.</p>
         
+        <section class="comentarios">
+            <article class="comentario">
+                <p>
+                    No deberian nisiquiera vivir en bquilla!!!!
+                </p>
+            </article>
+            <article class="comentario">
+                <p>
+                    Cuidado con el traffico en la 46.
+                </p>
+            </article>
+        </section>
+
         <!-- Formulario para compartir consejos -->
         <form action="#" method="post"> 
             <label for="consejo">Comparte un Consejo:</label>
             <textarea id="consejo" name="consejo" rows="4" required></textarea>
             <button type="submit">Enviar Consejo</button>
         </form>
-        
-        <!-- Formulario para compartir rutas favoritas -->
-        <form action="#" method="post"> 
-            <label for="ruta-favorita">Comparte una Ruta Favorita:</label>
-            <input type="text" id="ruta-favorita" name="ruta-favorita" required>
-            <button type="submit">Enviar Ruta Favorita</button>
-        </form>
-        
-        <!-- Formulario para compartir eventos -->
-        <form action="#" method="post"> 
-            <label for="evento">Comparte un Evento:</label>
-            <input type="text" id="evento" name="evento" required>
-            <button type="submit">Enviar Evento</button>
-        </form>
     </section>
+    
 {% endblock %}
