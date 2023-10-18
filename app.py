@@ -30,10 +30,19 @@ def register():
     username = request.form["username"]
     password= request.form["password"]
     genero = request.form["genero"]
-    userr = Usuario(username,correo,password,genero)
-    db.session.add(userr)
-    db.session.commit()
-    return redirect("/")
+    condition = db.session.query(Usuario.id).filter(Usuario.correo == correo).all()
+    resultado = UsuarioSchema(many=True).dump(condition)
+
+    if len(resultado) > 0:
+        return redirect("/menuregistrar")
+    else:
+        userr = Usuario(username,correo,password,genero)
+        db.session.add(userr)
+        db.session.commit()
+        return redirect("/")
+        
+
+    
 
 
 @app.route("/ingresar", methods=["POST"])
@@ -41,9 +50,7 @@ def ingresar():
     correo= request.form["username"]
     password= request.form["password"]
     userr = db.session.query(Usuario.id).filter(Usuario.correo == correo, Usuario.password == password).all()
-    print(userr)
     resultado = UsuarioSchema(many=True).dump(userr)
-    print(resultado)
     
     if len(resultado) > 0:
         session["usuario"]=Usuario.query.get(resultado[0]["id"]).nombre
