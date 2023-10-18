@@ -126,7 +126,7 @@
     const rnd = Math.floor(Math.random() * 4);
 
     if (rnd===1) {
-        // Mostrar un mensaje en un alertify
+        
         alertify.alert('Alerta!!, hay peligro en la ruta trazada');
         
     }
