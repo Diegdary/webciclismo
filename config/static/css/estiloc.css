@@ -71,3 +71,27 @@ footer {
     color: #fff;
     padding: 10px 0;
 }
+
+.comentarios {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.comentario {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 20px; 
+    padding-left: 20px;
+    border-color: #007acc;
+    
+}
+
+.nombre {
+    font-weight: bold;
+    font-size: 20px;
+    
+}

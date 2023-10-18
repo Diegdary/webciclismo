@@ -52,7 +52,7 @@
 /* Sección Características Principales */
 #features {
     background-color: #f0f0f0;
-    padding: 40px;
+    padding: 20px;
 }
 
 #features h2 {
@@ -75,8 +75,8 @@
 }
 
 #features img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     margin-bottom: 10px;
 }
 
@@ -90,3 +90,4 @@
     background-color: #00578e;
     color: #FFFFFF;
 }
+
